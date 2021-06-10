@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "006e8543-a192-4132-abf1-bc0d2a6f6d3d",
+		"name": "博客接口测试",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "账号登录",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"peng.lei\",\n    \"password\":\"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/login"
+			},
+			"response": []
+		},
+		{
+			"name": "账号注册",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"peng.lei\",\n    \"password\":\"123456\",\n    \"email\":\"xxx@xxx.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/register"
+			},
+			"response": []
+		},
+		{
+			"name": "账号登出",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNjIyNTIxMzA0LCJleHAiOjE2MjMxMjYxMDR9.o7Fp8Lnp-DUSEJcToqeKNuk7L-LCbQ1qba0tZOOfje6Wa-FuoUksbjJquzTj-OqDCyDGBqiOFVZCOg5FmmSM3Q",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:8081/logout"
+			},
+			"response": []
+		},
+		{
+			"name": "用户列表",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/user/list"
+			},
+			"response": []
+		},
+		{
+			"name": "博客列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/blog/list"
+			},
+			"response": []
+		},
+		{
+			"name": "博客添加",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNjIyNDI1MzU2LCJleHAiOjE2MjMwMzAxNTZ9.s_5YuluOXNfZUXNmEjM0QdAaMrXxzxOB0isBFldSWsIJC_cJA0oGilT9j6K7dIuhHgQ71F2M76HwejfRYiGVEw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"博客标题xxx\",\n    \"description\":\"博客摘要xxx\",\n    \"content\":\"博客内容xxx\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/blog/edit"
+			},
+			"response": []
+		},
+		{
+			"name": "博客编辑",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNjIyNDI1MzU2LCJleHAiOjE2MjMwMzAxNTZ9.s_5YuluOXNfZUXNmEjM0QdAaMrXxzxOB0isBFldSWsIJC_cJA0oGilT9j6K7dIuhHgQ71F2M76HwejfRYiGVEw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":11,\n    \"title\":\"博客标题Edit\",\n    \"description\":\"博客摘要xxx\",\n    \"content\":\"博客内容xxx\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/blog/edit"
+			},
+			"response": []
+		},
+		{
+			"name": "博客删除",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNjIyNjM3NTM3LCJleHAiOjE2MjMyNDIzMzd9.cXsft9KD93RZJqYSgb5xxCIpDq0kYqXXu8TVKuwdIOy4b5uE7udm5yQE_4SjFuJpejJ0WGdsG0kvbEezXGhbYw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":21\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/blog/delete"
+			},
+			"response": []
+		}
+	]
+}
